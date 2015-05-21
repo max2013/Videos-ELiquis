@@ -119,9 +119,8 @@
                 var ref = window.open('videos/'+arrVideos[$(this).attr('id')]+'.mp4', '_blank', 'location=yes');
             });
         });
-    });
-    
-    function downloadFile(){
+        
+            function downloadFile(){
 
 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0,   
     function onFileSystemSuccess(fileSystem) {
@@ -148,7 +147,13 @@ window.requestFileSystem(LocalFileSystem.PERSISTENT, 0,
         }, fail);
     }, fail);
 };
-}
+        
+        
+        
+    });
+    
+
+ 
 </script>
 </head>
 <body>
