@@ -1,0 +1,217 @@
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/splash/splash-icon.png">
+<link rel="apple-touch-startup-image" href="images/splash/splash-screen.png" 			media="screen and (max-device-width: 320px)" />  
+<link rel="apple-touch-startup-image" href="images/splash/splash-screen%402x.png" 		media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" /> 
+<link rel="apple-touch-startup-image" sizes="640x1096" href="images/splash/splash-screen%403x.png" />
+<link rel="apple-touch-startup-image" sizes="1024x748" href="images/splash/splash-screen-ipad-landscape.html" media="screen and (min-device-width : 481px) and (max-device-width : 1024px) and (orientation : landscape)" />
+<link rel="apple-touch-startup-image" sizes="768x1004" href="images/splash/splash-screen-ipad-portrait.png" media="screen and (min-device-width : 481px) and (max-device-width : 1024px) and (orientation : portrait)" />
+<link rel="apple-touch-startup-image" sizes="1536x2008" href="images/splash/splash-screen-ipad-portrait-retina.png"   media="(device-width: 768px)	and (orientation: portrait)	and (-webkit-device-pixel-ratio: 2)"/>
+<link rel="apple-touch-startup-image" sizes="1496x2048" href="images/splash/splash-screen-ipad-landscape-retina.png"   media="(device-width: 768px)	and (orientation: landscape)	and (-webkit-device-pixel-ratio: 2)"/>
+
+<title>Eliquis - App</title>
+
+<link href="styles/style.css"     		rel="stylesheet" type="text/css">
+<link href="styles/framework.css" 		rel="stylesheet" type="text/css">
+<link href="styles/owl.carousel.css" 	 rel="stylesheet" type="text/css">
+<link href="styles/owl.theme.css" 		rel="stylesheet" type="text/css">
+<link href="styles/swipebox.css"		 rel="stylesheet" type="text/css">
+<link href="styles/colorbox.css"		 rel="stylesheet" type="text/css">
+
+
+
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="scripts/jqueryui.js"></script>
+<script type="text/javascript" src="scripts/owl.carousel.min.js"></script>
+<script type="text/javascript" src="scripts/jquery.swipebox.js"></script>
+<script type="text/javascript" src="scripts/colorbox.js"></script>
+<script type="text/javascript" src="scripts/snap.js"></script>
+<script type="text/javascript" src="scripts/login.js"></script>
+<script type="text/javascript" src="scripts/custom.js"></script>
+<script type="text/javascript" src="scripts/framework.js"></script>
+<script type="text/javascript" src="scripts/framework.launcher.js"></script>
+
+<script type="text/javascript" src="lib/bootstrap/js/bootstrap.js"></script>
+        
+<link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+<link href="lib/bootstrap/css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
+
+<!-- MY PLUGINS -->
+<script type="text/javascript" src="phonegap.js"></script>
+<script type="text/javascript" src="lib/js/php.js"></script>
+<script type="text/javascript" src="lib/js/js_install.js"></script>
+<script type="text/javascript" src="lib/js/js_cadastro.js"></script>
+
+<style type="text/css">
+    .bs-example{
+            margin: 20px;
+            background-color: #F0F0F0;
+            border-radius: 5px;
+    }
+</style>
+
+
+ <script>
+     
+
+function onDeviceReady()
+{
+    antsDb.handleConnect();
+}
+
+    //document.addEventListener('deviceready', onDeviceReady, false);
+    
+    
+    //if(sessionStorage == null) alert("Storage not supported by the browser");
+       // sessionStorage.firstname = 'Rafael';
+</script>
+
+</head>
+<body onload="onDeviceReady();">
+
+<div id="preloader">
+	<div id="status">
+    	<p class="center-text"> Carregando conteúdo... </p>
+    </div>
+</div>
+
+<div class="homepage-wrapper">
+        
+    
+	<img class="homepage-logo" src="images/misc/logo.png"  alt="img">
+        <div class="clear"></div>
+    
+        <div class="bs-example">
+            
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist" id="myTab">
+                <li class="active"><a href="#dados" role="tab" data-toggle="tab">Dados do Médico</a></li>
+                <li><a href="#view" role="tab" data-toggle="tab" id="viewParticipantes">Visualizar cadastrados</a></li>
+              </ul>
+                
+            
+              <div class="tab-content" >
+                  
+                <!-- Dados do Participante-->
+                <div class="tab-pane active" id="dados">
+                    <form action="#" method="post" class="contactForm" id="form-cadastro" name="form-cadastro">
+                        <fieldset>
+                            <div class="formValidationError" id="contactNameFieldError">
+                                <div class="static-notification-red tap-dismiss-notification">
+                                    <p class="center-text uppercase">Preencha o nome!</p>
+                                </div>
+                            </div>             
+
+                            <div class="formFieldWrap">
+                                <label class="field-title contactNameField" for="participantesNome">Nome do médico<span> (obrigatório)</span></label>
+                                <input type="text" name="participantesNome" value="" class="contactField requiredField" id="participantesNome" required/>
+                            </div>
+                            
+                            <div class="formFieldWrap">
+                                <label class="field-title contactEmailField" for="participantesEmail">E-mail</label>
+                                <input type="email" name="participantesEmail" value="" class="contactField" id="participantesEmail"/>
+                            </div>
+                            
+                            <div class="formFieldWrap">
+                                <label class="field-title contactEmailField" for="participantesTelefone">Telefone</label>
+                                <input type="number" name="participantesTelefone" value="" class="contactField" id="participantesTelefone"/>
+                            </div>
+                            
+                            <div class="formFieldWrap">
+                                <label class="field-title contactEmailField" for="participantesCrm">CRM</label>
+                                <input type="text" name="participantesCrm" value="" class="contactField" id="participantesCrm"/>
+                            </div>
+                            
+                            
+
+                            <div class="formFieldWrap">
+                                <label class="field-title contactEmailField" for="participantesEspecialidade">Cidade</label>
+                                <input type="text" name="participantesCidade" value="" class="contactField" id="participantesCidade"/>
+                            </div>
+
+                            <div class="formTextareaWrap">
+                                <label class="field-title contactMessageTextarea" for="contactMessageTextarea">Observação</label>
+                                <textarea name="participantesObservacao" class="contactTextarea" id="participantesObservacao"></textarea>
+                            </div>
+
+                        </fieldset>
+                    </form> 
+                    
+                        <div class="formSubmitButtonErrorsWrap">
+                            <input type="button" class="buttonWrap button button-turqoise contactSubmitButton" id="send-form" value="Cadastrar"/>
+                        </div>
+                    
+                       
+                
+                </div>
+                  
+                <!-- Visualizar dados -->
+                <div class="tab-pane" id="view">
+                    
+                    <div id="viewEmail"></div>
+                    
+                    <div class="container no-bottom">
+                       
+                        <table cellspacing='0' class="table" style="width: 95%;" id="tblParticipantes"></table>
+                     </div>
+                </div>
+                
+                
+                
+              </div>
+            
+        </div>
+   
+    
+    
+</div>
+
+    
+    
+    
+    
+<div class="homepage-background">
+	<div class="bg-pattern"></div>
+    <div class="bg-overlay"></div>
+	<img id="bg" src="images/bg.png" alt="img">
+</div>
+<script>
+  $(function () {
+    $('#myTab a').click(function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+    })
+  })
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

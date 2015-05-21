@@ -1,0 +1,187 @@
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/splash/splash-icon.png">
+<link rel="apple-touch-startup-image" href="images/splash/splash-screen.png" 			media="screen and (max-device-width: 320px)" />  
+<link rel="apple-touch-startup-image" href="images/splash/splash-screen%402x.png" 		media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" /> 
+<link rel="apple-touch-startup-image" sizes="640x1096" href="images/splash/splash-screen%403x.png" />
+<link rel="apple-touch-startup-image" sizes="1024x748" href="images/splash/splash-screen-ipad-landscape.html" media="screen and (min-device-width : 481px) and (max-device-width : 1024px) and (orientation : landscape)" />
+<link rel="apple-touch-startup-image" sizes="768x1004" href="images/splash/splash-screen-ipad-portrait.png" media="screen and (min-device-width : 481px) and (max-device-width : 1024px) and (orientation : portrait)" />
+<link rel="apple-touch-startup-image" sizes="1536x2008" href="images/splash/splash-screen-ipad-portrait-retina.png"   media="(device-width: 768px)	and (orientation: portrait)	and (-webkit-device-pixel-ratio: 2)"/>
+<link rel="apple-touch-startup-image" sizes="1496x2048" href="images/splash/splash-screen-ipad-landscape-retina.png"   media="(device-width: 768px)	and (orientation: landscape)	and (-webkit-device-pixel-ratio: 2)"/>
+
+<title>Eliquis - App</title>
+
+<link href="styles/style.css"     		rel="stylesheet" type="text/css">
+<link href="styles/framework.css" 		rel="stylesheet" type="text/css">
+<link href="styles/owl.carousel.css" 	 rel="stylesheet" type="text/css">
+<link href="styles/owl.theme.css" 		rel="stylesheet" type="text/css">
+<link href="styles/swipebox.css"		 rel="stylesheet" type="text/css">
+<link href="styles/colorbox.css"		 rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="scripts/jqueryui.js"></script>
+<script type="text/javascript" src="scripts/owl.carousel.min.js"></script>
+<script type="text/javascript" src="scripts/jquery.swipebox.js"></script>
+<script type="text/javascript" src="scripts/colorbox.js"></script>
+<script type="text/javascript" src="scripts/snap.js"></script>
+<script type="text/javascript" src="scripts/login.js"></script>
+<script type="text/javascript" src="scripts/custom.js"></script>
+<script type="text/javascript" src="scripts/framework.js"></script>
+<script type="text/javascript" src="scripts/framework.launcher.js"></script>
+
+
+<!-- MY PLUGINS -->
+<script type="text/javascript" src="phonegap.js"></script>
+<style>
+    .baseHome
+    {
+        background-image: url(images/page-home.jpg);
+        width: 1024px;
+        height: 768px;
+    }
+    
+    .baseHome .ul1
+    {
+        position: absolute;
+        top:190px;
+        left:20px;
+        width: 993px;
+        height: 100px;
+        //background-color: #0b84fe;
+        
+    }
+    
+    .baseHome .ul1 li
+    {
+        list-style: none;
+        width: 150px;
+        height: 206px;
+        //background-color: #16a085;
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 20px;
+        opacity: .7;
+    }
+    
+    
+    .baseHome .ul2
+    {
+        position: absolute;
+        top:447px;
+        left:100px;
+        width: 833px;
+        height: 100px;
+        //background-color: #0b84fe;
+        
+    }
+    
+    .baseHome .ul2 li
+    {
+        list-style: none;
+        width: 150px;
+        height: 206px;
+        //background-color: #16a085;
+        float: left;
+        margin-right: 15px;
+        margin-bottom: 20px;
+        opacity: .7;
+    }
+</style>
+
+<script>
+    $(window).load(function()
+    {
+        var arrVideos = new Array(
+                '4404_MESA_REDONDA', 
+                '4405_O_AAS_AINDA_TEM_ESPACO_NA_PREVENCAO_DE_AVC_EM_FA_1',
+                '4406_11_21_31_COMO_ESSES_NUMEROS_PODEM_IMPACTAR_SUA_PRATICA_CLINICA',
+                '4407_PACIENTE_IDOSO_QUAIS_OS_DADOS_CIENTIFICOS_QUE_PODEM_INFLUENCIARA_ESCOLHA_DE_UM_NOAC',
+                '4408_DIRETRIZES_NEUROLOGICAS_PARA_PREVENCAO_DO_AVC_EM_FA',
+                '4412_DISCUSSAO_DE_CASO_CLINICO_ESCORES_ELEVADOS_DE_CHA2DS2_VASC_E_HAS_BLED',
+                '4413_DISCUSSAO_DE_CASO_CLINICO_PREVENCAO_SECUNDARIA_DE_AVCAIT',
+                '4414_FISIOPATOLOGIA_DE_FORMACAO_DO_TROMBO_EM_FA',
+                '4415_CARDIOVERSAO_COM_NOACs',
+                '4416_ATRIBUTOS_DA_APIXABANA_EM_PACIENTES',
+                '4417_DOENCA_RENAL_E_FA_EPIDEMIOLOGIA');
+        $('li').each(function(index)
+        {
+            
+            $(this).click(function()
+            {
+                console.log($(this).attr('id'))
+                var ref = window.open('videos/'+arrVideos[$(this).attr('id')]+'.mp4', '_blank', 'location=yes');
+            });
+        });
+    });
+</script>
+</head>
+<body>
+
+<div id="preloader">
+	<div id="status">
+    	<p class="center-text"> Carregando conteúdo... </p>
+    </div>
+</div>
+
+<div class="homepage-wrapper">
+        
+    <!--<video src="4405_O_AAS AINDA_TEM_ESPACO_NA_PREVENCAO_DE_AVC_EM_FA.mp4" controls width="1024" height="768"></video>-->
+    <div class="container">
+        <div class="baseHome" align="center">
+            <ul id="baseHome" class="ul1">
+                <li id="0"></li>
+                <li id="1" style="margin-left: 10px;"></li>
+                <li id="2" style="margin-left: 5px;"></li>
+                <li id="3" style="margin-left: 5px;"></li>
+                <li id="4" style="margin-left: 5px;"></li>
+                <li id="5" style="margin-left: 5px;"></li>
+               
+                
+            </ul>
+            <ul id="baseHome" class="ul2">
+               
+                <li id="6" style="margin-left: 5px;"></li>
+                <li id="7" style="margin-left: 0px;"></li>
+                <li id="8" style="margin-left: 0px;"></li>
+                <li id="9" style="margin-left: 0px;"></li>
+                <li id="10" style="margin-left: 0px;"></li>
+                
+            </ul>
+        </div>
+    </div>
+    
+</div>
+    
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
