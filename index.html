@@ -97,7 +97,7 @@
     $(window).load(function()
     {
        
-        downloadFile();
+        
         var arrVideos = new Array(
                 '4404_MESA_REDONDA', 
                 '4405_O_AAS_AINDA_TEM_ESPACO_NA_PREVENCAO_DE_AVC_EM_FA_1',
@@ -120,7 +120,8 @@
             });
         });
         
-            function downloadFile(){
+        downloadFile(); 
+        function downloadFile(){
 
 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0,   
     function onFileSystemSuccess(fileSystem) {
