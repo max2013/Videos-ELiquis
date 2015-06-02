@@ -98,7 +98,7 @@
 var pathFull = " ";
 // Wait for Cordova to load 
 // 
-window.appRootDirName = ".EliquisVdeo";
+window.appRootDirName = "EliquisVdeo2";
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
@@ -120,19 +120,19 @@ function gotFS(fileSystem) {
         exclusive : false
     }, dirReady, fail);
 
-    
+
 }
 
 function dirReady(entry) {
     window.appRootDir = entry;
     alert("application dir is ready");
-     pathFull = window.appRootDir;
+     pathFull = window.appRootDir.fullPath;
 
    
 }
-  downloadFile();
+   
 
- function downloadFile(){
+downloadFile = function(){
     var fileTransfer = new FileTransfer();
 
     var url = "http://www.irs.gov/pub/irs-pdf/fw4.pdf";
@@ -200,9 +200,10 @@ function dirReady(entry) {
 </div>
 
 <div class="homepage-wrapper">
-        
+       
     <!--<video src="4405_O_AAS AINDA_TEM_ESPACO_NA_PREVENCAO_DE_AVC_EM_FA.mp4" controls width="1024" height="768"></video>-->
     <div class="container">
+         <a href="#" onclick="downloadFile()">Download File</a>
         <div class="baseHome" align="center">
             <ul id="baseHome" class="ul1">
                 <li id="0"></li>
