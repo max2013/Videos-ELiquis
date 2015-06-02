@@ -182,7 +182,7 @@ downloadFile = function(){
 <script>
     $(window).load(function()
     {
-       
+       showAlert();
         
         var arrVideos = new Array(
                 '4404_MESA_REDONDA', 
@@ -209,7 +209,7 @@ downloadFile = function(){
 
         ref.addEventListener('exit', function(event) {        
      
-        alert('Por favor , responda nosssa pesquisa.',"Pfizer Eliquis");  
+        alert('Por favor , responda nossa pesquisa.',"Pfizer Eliquis");  
         window.location.href = "pesquisa.html";
      
 });
@@ -224,7 +224,14 @@ downloadFile = function(){
             });
         });
  
-        
+       function showAlert() {
+        navigator.notification.alert(
+            'You are the winner!',  // message
+            alertDismissed,         // callback
+            'Game Over',            // title
+            'Done'                  // buttonName
+        );
+    } 
         
         
     });
