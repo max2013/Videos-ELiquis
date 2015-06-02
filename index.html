@@ -129,6 +129,13 @@ ref.addEventListener('exit', function(event) {
         window.location.href = "cadastro.html";
      
 });
+                
+    ref.addEventListener( "loadstop", function() {
+    setTimeout(function() {
+        ref.close();
+        alert('closed time');  
+    }, 5000 );
+});
  
 
 
