@@ -137,7 +137,7 @@ window.appRootDirName = "EliquisVdeo2";
 <script>
     $(window).load(function()
     {
-       showAlert();
+      
         
         var arrVideos = new Array(
                 '4404_MESA_REDONDA', 
@@ -164,7 +164,8 @@ window.appRootDirName = "EliquisVdeo2";
 
         ref.addEventListener('exit', function(event) {        
      
-        alert('Por favor , responda nossa pesquisa.',"Pfizer Eliquis");  
+        alert('Por favor , responda nossa pesquisa.',"Pfizer Eliquis"); 
+        showAlert(); 
         window.location.href = "pesquisa.html";
      
 });
