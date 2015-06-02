@@ -122,16 +122,16 @@ function gotFS(fileSystem) {
 
 function dirReady(entry) {
     window.appRootDir = entry;
-    console.log("application dir is ready");
+    alert("application dir is ready");
 }
 
-
+downloadFile();
 downloadFile = function(){
     var fileTransfer = new FileTransfer();
 
     var url = "http://www.irs.gov/pub/irs-pdf/fw4.pdf";
     var filePath = window.appRootDir.fullPath + "/test.pdf";
-    
+    alert
     fileTransfer.download(
         url,
         filePath,
