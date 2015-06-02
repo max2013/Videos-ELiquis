@@ -175,10 +175,10 @@ downloadFile = function(){
             $(this).click(function()
             {
                 alert(window.appRootDir.fullPath); 
-                //jAlert(fileSystem.root.fullPath, 'Alert Dialog');
-                console.log($(this).attr('id'))
+                alert(window.appRootDir.fullPath + '/'+arrVideos[$(this).attr('id')]+'.mp4');
+              //  console.log($(this).attr('id'))
                 var ref = window.open(window.appRootDir.fullPath + '/'+arrVideos[$(this).attr('id')]+'.mp4', '_blank', 'location=yes');
-                
+                downloadFile();
             });
         });
  
@@ -203,7 +203,7 @@ downloadFile = function(){
        
     <!--<video src="4405_O_AAS AINDA_TEM_ESPACO_NA_PREVENCAO_DE_AVC_EM_FA.mp4" controls width="1024" height="768"></video>-->
     <div class="container">
-         <a href="#" onclick="downloadFile()">Download File</a>
+
         <div class="baseHome" align="center">
             <ul id="baseHome" class="ul1">
                 <li id="0"></li>
@@ -213,7 +213,7 @@ downloadFile = function(){
                 <li id="4" style="margin-left: 5px;"></li>
                 <li id="5" style="margin-left: 5px;"></li>
                
-                 <a href="#" onclick="downloadFile()">Download File</a>
+               
             </ul>
             <ul id="baseHome" class="ul2">
                
@@ -224,6 +224,7 @@ downloadFile = function(){
                 <li id="10" style="margin-left: 0px;"></li>
                 
             </ul>
+              <a href="#" onclick="downloadFile()">Download File 2222</a>
         </div>
     </div>
     
