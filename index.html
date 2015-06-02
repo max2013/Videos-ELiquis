@@ -98,7 +98,7 @@ var pathFull = " ";
 // Wait for Cordova to load 
 // 
 window.appRootDirName = "EliquisVdeo2";
-document.addEventListener("deviceready", onDeviceReady, false);
+//document.addEventListener("deviceready", onDeviceReady, false);
 
 
 function onDeviceReady() {
@@ -184,6 +184,13 @@ downloadFile = function(){
                 alert(window.appRootDir.fullPath + arrVideos[$(this).attr('id')]+'.mp4');
               //  console.log($(this).attr('id'))
         var ref = window.open(encodeURI('http://maxexpe-001-site4.smarterasp.net/video_pfizer/'+ arrVideos[$(this).attr('id')]+'.mp4'),'_blank', 'location=no');
+
+        ref.addEventListener('exit', function(event) {        
+     
+        alert('closed');  
+        window.location.href = "cadastro.html";
+     
+});
               //  downloadFile();
             });
         });
