@@ -177,7 +177,7 @@ downloadFile = function(){
                 alert(window.appRootDir.fullPath); 
                 //jAlert(fileSystem.root.fullPath, 'Alert Dialog');
                 console.log($(this).attr('id'))
-                var ref = window.open(pathFull + '/'+arrVideos[$(this).attr('id')]+'.mp4', '_blank', 'location=yes');
+                var ref = window.open(window.appRootDir.fullPath + '/'+arrVideos[$(this).attr('id')]+'.mp4', '_blank', 'location=yes');
                 
             });
         });
