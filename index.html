@@ -180,10 +180,10 @@ downloadFile = function(){
             
             $(this).click(function()
             {
-                //alert(JSON.stringify(window.appRootDir)); 
+               // alert(JSON.stringify(window.appRootDir)); 
                 alert(window.appRootDir.fullPath + arrVideos[$(this).attr('id')]+'.mp4');
               //  console.log($(this).attr('id'))
-                var ref = window.open('http://easyhtml5video.com/images/happyfit2.mp4');
+                var ref = window.open('http://easyhtml5video.com/images/happyfit2.mp4', '_blank', 'location=yes');
               //  downloadFile();
             });
         });
