@@ -98,31 +98,50 @@
 var pathFull = " ";
 // Wait for Cordova to load 
 // 
-window.appRootDirName = ".EliquisVideo";
-    document.addEventListener("deviceready", onDeviceReady, false);
- 
-    function onDeviceReady() {
-       alert("device is ready");
-        window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-    }
+window.appRootDirName = "EliquisVdeo.app";
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() {
+    console.log("device is ready");
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+}
+
+function fail() {
+    console.log("failed to get filesystem");
+}
+
+function gotFS(fileSystem) {
+    console.log("filesystem got");
+    window.fileSystem = fileSystem;
+    fileSystem.root.getDirectory(window.appRootDirName, {
+        create : true,
+        exclusive : false
+    }, dirReady, fail);
+}
+
+function dirReady(entry) {
+    window.appRootDir = entry;
+    console.log("application dir is ready");
+}
+
+
+downloadFile = function(){
+    var fileTransfer = new FileTransfer();
+
+    var url = "http://www.irs.gov/pub/irs-pdf/fw4.pdf";
+    var filePath = window.appRootDir.fullPath + "/test.pdf";
     
-    function fail() {
-        alert("failed to get filesystem");
-    }
- 
-    function gotFS(fileSystem) {
-        alert("filesystem got");
-        fileSystem.root.getDirectory(window.appRootDirName, {
-            create : true,
-            exclusive : false
-        }, dirReady, fail);
-    }
- 
-    function dirReady(entry) {
-        window.appRootDir = entry;
-        alert(JSON.stringify(window.appRootDir));
-    }
+    fileTransfer.download(
+        url,
+        filePath,
+        function(entry) {
+            alert("download complete: " + entry.fullPath);
+        },
+        function(error) {
+            alert("download error" + error.source);
+        }
+    );
+}
     
 </script> 
 
