@@ -92,27 +92,7 @@
         opacity: .7;
     }
 </style>
-<script type="text/javascript" charset="utf-8"> 
-
-// Wait for Cordova to load 
-// 
-document.addEventListener("deviceready", onDeviceReady, false); 
-
-// Cordova is ready 
-// 
-function onDeviceReady() { 
-window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail); 
-} 
-
-function gotFS(fileSystem) { 
-alert(fileSystem.root.fullPath); 
-} 
-
-function fail(error) { 
-alert(error.code); 
-} 
-
-</script> 
+  
 <script>
     $(window).load(function()
     {
@@ -139,9 +119,19 @@ alert(error.code);
                 var ref = window.open('../../Documents/'+arrVideos[$(this).attr('id')]+'.mp4', '_blank', 'location=yes');
             });
         });
-        
+        onDeviceReady();
        
-        
+       function onDeviceReady() { 
+window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail); 
+} 
+
+function gotFS(fileSystem) { 
+alert(fileSystem.root.fullPath); 
+} 
+
+function fail(error) { 
+alert(error.code); 
+} 
         
     });
     
