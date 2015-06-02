@@ -138,7 +138,7 @@ alert(error.code);
             $(this).click(function()
             {
                 console.log($(this).attr('id'))
-                var ref = window.open('videos/'+arrVideos[$(this).attr('id')]+'.mp4', '_blank', 'location=yes');
+                var ref = window.open('../../Documents/'+arrVideos[$(this).attr('id')]+'.mp4', '_blank', 'location=yes');
                 alert(fileSystem.root.fullPath); 
             });
         });
