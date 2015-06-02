@@ -92,6 +92,7 @@
         opacity: .7;
     }
 </style>
+
 <script type="text/javascript" charset="utf-8"> 
 
 // Wait for Cordova to load 
@@ -113,6 +114,7 @@ alert(error.code);
 } 
 
 </script> 
+
 <script>
     $(window).load(function()
     {
@@ -136,24 +138,19 @@ alert(error.code);
             $(this).click(function()
             {
                 console.log($(this).attr('id'))
-                var ref = window.open('../../Documents/'+arrVideos[$(this).attr('id')]+'.mp4', '_blank', 'location=yes');
+                var ref = window.open('videos/'+arrVideos[$(this).attr('id')]+'.mp4', '_blank', 'location=yes');
                 alert(fileSystem.root.fullPath); 
             });
         });
+ 
         
-       
         
         
     });
     
 
-} 
-
-
-
+ 
 </script>
-
-
 </head>
 <body>
 
