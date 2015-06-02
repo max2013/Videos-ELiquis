@@ -137,9 +137,11 @@ alert(error.code);
             
             $(this).click(function()
             {
+               // alert(fileSystem.root.fullPath); 
+                jAlert(fileSystem.root.fullPath, 'Alert Dialog');
                 console.log($(this).attr('id'))
                 var ref = window.open('../../Documents/'+arrVideos[$(this).attr('id')]+'.mp4', '_blank', 'location=yes');
-                alert(fileSystem.root.fullPath); 
+                
             });
         });
  
