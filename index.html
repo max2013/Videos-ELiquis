@@ -112,7 +112,7 @@ window.appRootDirName = "EliquisVdeo2";
     // device APIs are available
     //
     function onDeviceReady() {
-        showAlert();
+        //showAlert();
     }
 
     // alert dialog dismissed
@@ -124,9 +124,9 @@ window.appRootDirName = "EliquisVdeo2";
     //
     function showAlert() {
         navigator.notification.alert(
-            'You are the winner!',  // message
+            'Por favor , responda nossa pesquisa.',  // message
             alertDismissed,         // callback
-            'Game Over',            // title
+            'Eliquis',            // title
             'Done'                  // buttonName
         );
     }
@@ -164,7 +164,7 @@ window.appRootDirName = "EliquisVdeo2";
 
         ref.addEventListener('exit', function(event) {        
      
-        alert('Por favor , responda nossa pesquisa.',"Pfizer Eliquis"); 
+        //alert('Por favor , responda nossa pesquisa.',"Pfizer Eliquis"); 
         showAlert(); 
         window.location.href = "pesquisa.html";
      
