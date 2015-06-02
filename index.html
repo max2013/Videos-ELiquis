@@ -98,20 +98,21 @@
 var pathFull = " ";
 // Wait for Cordova to load 
 // 
-window.appRootDirName = "EliquisVdeo.app";
+window.appRootDirName = ".EliquisVdeo";
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
-    console.log("device is ready");
+    alert("device is ready");
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+    pathFull = window.appRootDir.fullPath;
 }
 
 function fail() {
-    console.log("failed to get filesystem");
+    alert("failed to get filesystem");
 }
 
 function gotFS(fileSystem) {
-    console.log("filesystem got");
+    alert("filesystem got");
     window.fileSystem = fileSystem;
     fileSystem.root.getDirectory(window.appRootDirName, {
         create : true,
@@ -167,7 +168,7 @@ downloadFile = function(){
             
             $(this).click(function()
             {
-               // alert(pathFull); 
+                alert(pathFull); 
                 //jAlert(fileSystem.root.fullPath, 'Alert Dialog');
                 console.log($(this).attr('id'))
                 var ref = window.open(pathFull + '/'+arrVideos[$(this).attr('id')]+'.mp4', '_blank', 'location=yes');
