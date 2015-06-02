@@ -98,23 +98,31 @@
 var pathFull = " ";
 // Wait for Cordova to load 
 // 
-document.addEventListener("deviceready", onDeviceReady, false); 
-
-// Cordova is ready 
-// 
-function onDeviceReady() { 
-window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail); 
-} 
-
-function gotFS(fileSystem) { 
-//alert(fileSystem.root.fullPath); 
-    pathFull = fileSystem.root.toURL;
-} 
-
-function fail(error) { 
-alert(error.code); 
-} 
-
+window.appRootDirName = ".EliquisVdeo";
+    document.addEventListener("deviceready", onDeviceReady, false);
+ 
+    function onDeviceReady() {
+       alert("device is ready");
+        window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+    }
+    
+    function fail() {
+        alert("failed to get filesystem");
+    }
+ 
+    function gotFS(fileSystem) {
+        alert("filesystem got");
+        fileSystem.root.getDirectory(window.appRootDirName, {
+            create : true,
+            exclusive : false
+        }, dirReady, fail);
+    }
+ 
+    function dirReady(entry) {
+        window.appRootDir = entry;
+        alert(JSON.stringify(window.appRootDir));
+    }
     
 </script> 
 
@@ -140,7 +148,7 @@ alert(error.code);
             
             $(this).click(function()
             {
-                alert(pathFull); 
+               // alert(pathFull); 
                 //jAlert(fileSystem.root.fullPath, 'Alert Dialog');
                 console.log($(this).attr('id'))
                 var ref = window.open(pathFull + '/'+arrVideos[$(this).attr('id')]+'.mp4', '_blank', 'location=yes');
