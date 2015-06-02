@@ -74,8 +74,8 @@
     {
         position: absolute;
         top:447px;
-        left:100px;
-        width: 833px;
+        left:20px;
+        width: 1010px;
         height: 100px;
         //background-color: #0b84fe;
         
@@ -84,11 +84,11 @@
     .baseHome .ul2 li
     {
         list-style: none;
-        width: 150px;
+        width: 140px;
         height: 206px;
-        //background-color: #16a085;
+      //  background-color: #16a085;
         float: left;
-        margin-right: 15px;
+        margin-right: 25px;
         margin-bottom: 20px;
         opacity: .7;
     }
@@ -112,7 +112,8 @@
                 '4414_FISIOPATOLOGIA_DE_FORMACAO_DO_TROMBO_EM_FA',
                 '4415_CARDIOVERSAO_COM_NOACs',
                 '4416_ATRIBUTOS_DA_APIXABANA_EM_PACIENTES',
-                '4417_DOENCA_RENAL_E_FA_EPIDEMIOLOGIA');
+                '4417_DOENCA_RENAL_E_FA_EPIDEMIOLOGIA',
+                '44234_AULA_MAO_DICA ELIQUIS');
         $('li').each(function(index)
         {
            
@@ -121,7 +122,9 @@
                // alert(JSON.stringify(window.appRootDir)); 
               //  alert(window.appRootDir.fullPath + arrVideos[$(this).attr('id')]+'.mp4');
               //  console.log($(this).attr('id'))
-                var ref = window.open('http://192.168.0.4:81/GoogleDrive/Server/Projetos/MaxExperience/Desenvolvimento/Clientes/Pfizer/Eliquis-Video-Cadastro/Eliquis-Video/public_html/EliquisVideo/www/videos/'+ arrVideos[$(this).attr('id')]+'.mp4', '_blank', 'location=yes');
+             //   var ref = window.open('http://192.168.0.4:81/GoogleDrive/Server/Projetos/MaxExperience/Desenvolvimento/Clientes/Pfizer/Eliquis-Video-//Cadastro/Eliquis-Video/public_html/EliquisVideo/www/videos/'+ arrVideos[$(this).attr('id')]+'.mp4', '_blank', 'location=yes');
+
+             var ref = window.open('http://maxexpe-001-site4.smarterasp.net/video_pfizer/'+ arrVideos[$(this).attr('id')]+'.mp4', '_blank', 'location=yes');
                
 ref.addEventListener('exit', function(event) {        
      
@@ -185,6 +188,7 @@ ref.addEventListener('exit', function(event) {
                 <li id="8" style="margin-left: 0px;"></li>
                 <li id="9" style="margin-left: 0px;"></li>
                 <li id="10" style="margin-left: 0px;"></li>
+                <li id="11" style="margin-left: 5px;"></li>
                 
             </ul>
                
