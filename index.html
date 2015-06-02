@@ -122,14 +122,16 @@
               //  alert(window.appRootDir.fullPath + arrVideos[$(this).attr('id')]+'.mp4');
               //  console.log($(this).attr('id'))
                 var ref = window.open('http://192.168.0.4:81/GoogleDrive/Server/Projetos/MaxExperience/Desenvolvimento/Clientes/Pfizer/Eliquis-Video-Cadastro/Eliquis-Video/public_html/EliquisVideo/www/videos/'+ arrVideos[$(this).attr('id')]+'.mp4', '_blank', 'location=yes');
-var timer  = setInterval(function() {   
-    if(ref.closed) {  
-        clearInterval(timer);  
+               
+ref.addEventListener('exit', function(event) {        
+     
         alert('closed');  
         window.location.href = "cadastro.html";
-    }  
-}, 1000); 
+     
+});
  
+
+
               //  downloadFile();
             });
 
