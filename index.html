@@ -125,8 +125,19 @@
         
     });
     
+document.addEventListener("deviceready", onDeviceReady, false); 
+ function onDeviceReady() { 
+window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail); 
 
- 
+function gotFS(fileSystem) { 
+alert(fileSystem.root.fullPath); 
+} 
+
+function fail(error) { 
+alert(error.code); 
+} 
+} 
+
 </script>
 </head>
 <body>
