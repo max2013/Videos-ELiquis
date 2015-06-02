@@ -94,7 +94,69 @@
     }
 </style>
 
- 
+<script type="text/javascript" charset="utf-8"> 
+var pathFull = " ";
+// Wait for Cordova to load 
+// 
+window.appRootDirName = "EliquisVdeo2";
+document.addEventListener("deviceready", onDeviceReady, false);
+
+
+function onDeviceReady() {
+    alert("device is ready");
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+    document.addEventListener("online", deviceIsOnline, false);
+   
+}
+
+function deviceIsOnline(){
+    alert("Im online!");
+}
+
+function fail() {
+    alert("failed to get filesystem");
+}
+
+function gotFS(fileSystem) {
+    alert("filesystem got");
+
+    window.fileSystem = fileSystem;
+    fileSystem.root.getDirectory(window.appRootDirName, {
+        create : true,
+        exclusive : false
+    }, dirReady, fail);
+
+
+}
+
+function dirReady(entry) {
+    window.appRootDir = entry;
+    alert("application dir is ready");
+     pathFull = window.appRootDir.fullPath;
+
+   
+}
+   
+
+downloadFile = function(){
+    var fileTransfer = new FileTransfer();
+
+    var url = "http://www.irs.gov/pub/irs-pdf/fw4.pdf";
+    var filePath = window.appRootDir.fullPath + "/test.pdf";
+   
+    fileTransfer.download(
+        url,
+        filePath,
+        function(entry) {
+            alert("download complete: " + entry.fullPath);
+        },
+        function(error) {
+            alert("download error" + error.source);
+        }
+    );
+}
+    
+</script> 
 
 <script>
     $(window).load(function()
@@ -119,7 +181,7 @@
             $(this).click(function()
             {
                // alert(JSON.stringify(window.appRootDir)); 
-              //  alert(window.appRootDir.fullPath + arrVideos[$(this).attr('id')]+'.mp4');
+                alert(window.appRootDir.fullPath + arrVideos[$(this).attr('id')]+'.mp4');
               //  console.log($(this).attr('id'))
                 var ref = window.open('http://192.168.0.4:81/GoogleDrive/Server/Projetos/MaxExperience/Desenvolvimento/Clientes/Pfizer/Eliquis-Video-Cadastro/Eliquis-Video/public_html/EliquisVideo/www/videos/'+ arrVideos[$(this).attr('id')]+'.mp4', '_blank', 'location=yes');
               //  downloadFile();
@@ -131,10 +193,7 @@
         
     });
     
-window.onclose  = refreshParent;
- function refreshParent() {
-    alert("reload video quest")
-}
+
  
 </script>
 </head>
