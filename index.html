@@ -177,13 +177,13 @@ downloadFile = function(){
                 '4417_DOENCA_RENAL_E_FA_EPIDEMIOLOGIA');
         $('li').each(function(index)
         {
-            
+           
             $(this).click(function()
             {
                // alert(JSON.stringify(window.appRootDir)); 
                 alert(window.appRootDir.fullPath + arrVideos[$(this).attr('id')]+'.mp4');
               //  console.log($(this).attr('id'))
-                var ref = window.open('http://easyhtml5video.com/images/happyfit2.mp4', '_blank', 'location=yes');
+                var ref = window.open('http://192.168.0.4:81/GoogleDrive/Server/Projetos/MaxExperience/Desenvolvimento/Clientes/Pfizer/Eliquis-Video-Cadastro/Eliquis-Video/public_html/EliquisVideo/www/videos/'+ arrVideos[$(this).attr('id')]+'.mp4', '_blank', 'location=yes');
               //  downloadFile();
             });
         });
@@ -230,7 +230,7 @@ downloadFile = function(){
                 <li id="10" style="margin-left: 0px;"></li>
                 
             </ul>
-              <a href="#" onclick="downloadFile()">Download File 2222</a>
+               
         </div>
     </div>
     
