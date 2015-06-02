@@ -108,7 +108,7 @@ window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
 
 function gotFS(fileSystem) { 
 //alert(fileSystem.root.fullPath); 
-    pathFull = fileSystem.root;
+    pathFull = fileSystem.root.toURL;
 } 
 
 function fail(error) { 
