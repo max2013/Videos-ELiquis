@@ -33,6 +33,7 @@
 <script type="text/javascript" src="scripts/custom.js"></script>
 <script type="text/javascript" src="scripts/framework.js"></script>
 <script type="text/javascript" src="scripts/framework.launcher.js"></script>
+<script type="text/javascript" src="lib/js/jquery.alerts.js"></script>
 
 
 <!-- MY PLUGINS -->
@@ -94,7 +95,7 @@
 </style>
 
 <script type="text/javascript" charset="utf-8"> 
-
+var pathFull = " ";
 // Wait for Cordova to load 
 // 
 document.addEventListener("deviceready", onDeviceReady, false); 
@@ -107,12 +108,14 @@ window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
 
 function gotFS(fileSystem) { 
 //alert(fileSystem.root.fullPath); 
+    pathFull = fileSystem.root.fullPath;
 } 
 
 function fail(error) { 
 alert(error.code); 
 } 
 
+    
 </script> 
 
 <script>
@@ -137,8 +140,8 @@ alert(error.code);
             
             $(this).click(function()
             {
-               // alert(fileSystem.root.fullPath); 
-                jAlert(fileSystem.root.fullPath, 'Alert Dialog');
+                alert(pathFull); 
+                //jAlert(fileSystem.root.fullPath, 'Alert Dialog');
                 console.log($(this).attr('id'))
                 var ref = window.open('../../Documents/'+arrVideos[$(this).attr('id')]+'.mp4', '_blank', 'location=yes');
                 
