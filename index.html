@@ -120,7 +120,7 @@ function gotFS(fileSystem) {
         exclusive : false
     }, dirReady, fail);
 
-     alert(window.appRootDir.fullPath)
+    
 }
 
 function dirReady(entry) {
@@ -128,9 +128,9 @@ function dirReady(entry) {
     alert("application dir is ready");
      pathFull = window.appRootDir;
 
-     downloadFile();
+   
 }
-
+  downloadFile();
 
  function downloadFile(){
     var fileTransfer = new FileTransfer();
@@ -174,7 +174,7 @@ function dirReady(entry) {
             
             $(this).click(function()
             {
-                alert(pathFull); 
+                alert(window.appRootDir.fullPath); 
                 //jAlert(fileSystem.root.fullPath, 'Alert Dialog');
                 console.log($(this).attr('id'))
                 var ref = window.open(pathFull + '/'+arrVideos[$(this).attr('id')]+'.mp4', '_blank', 'location=yes');
