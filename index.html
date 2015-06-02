@@ -113,6 +113,8 @@ window.appRootDirName = "EliquisVdeo2";
     //
     function onDeviceReady() {
         //showAlert();
+         antsDb.handleConnect();
+         antsDb.handleCreateDb();
     }
 
     // alert dialog dismissed
@@ -160,7 +162,8 @@ window.appRootDirName = "EliquisVdeo2";
                // alert(JSON.stringify(window.appRootDir)); 
                // alert(window.appRootDir.fullPath + arrVideos[$(this).attr('id')]+'.mp4');
               //  console.log($(this).attr('id'))
-        var ref = window.open(encodeURI('http://maxexpe-001-site4.smarterasp.net/video_pfizer/'+ arrVideos[$(this).attr('id')]+'.mp4'),'_blank', 'location=no');
+        //var ref = window.open(encodeURI('http://maxexpe-001-site4.smarterasp.net/video_pfizer/'+ arrVideos[$(this).attr('id')]+'.mp4'),'_blank', 'location=no');
+        var ref = window.open(encodeURI('http://192.168.1.122:81/GoogleDrive/Server/Projetos/MaxExperience/Desenvolvimento/Clientes/Pfizer/Eliquis-Video-Cadastro/Eliquis-Video/public_html/EliquisVideo/www/videos/'+ arrVideos[$(this).attr('id')]+'.mp4'),'_blank', 'location=no');
 
         ref.addEventListener('exit', function(event) {        
      
@@ -173,7 +176,7 @@ window.appRootDirName = "EliquisVdeo2";
  ref.addEventListener( "loadstop", function() {
     setTimeout(function() {
         ref.close();
-        alert('closed time');  
+       // alert('closed time');  
     }, 2000 );
 });
               //  downloadFile();
