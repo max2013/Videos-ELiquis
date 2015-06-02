@@ -101,10 +101,16 @@ var pathFull = " ";
 window.appRootDirName = "EliquisVdeo2";
 document.addEventListener("deviceready", onDeviceReady, false);
 
+
 function onDeviceReady() {
     alert("device is ready");
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+    document.addEventListener("online", deviceIsOnline, false);
    
+}
+
+function deviceIsOnline(){
+    alert("Im online!");
 }
 
 function fail() {
