@@ -98,86 +98,41 @@ var pathFull = " ";
 // Wait for Cordova to load 
 // 
 window.appRootDirName = "EliquisVdeo2";
-//document.addEventListener("deviceready", onDeviceReady, false);
-
-
-/*function onDeviceReady() {
-    alert("device is ready");
-    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-    document.addEventListener("online", deviceIsOnline, false);
+ 
    
-}
+    
+</script> 
 
-function deviceIsOnline(){
-    alert("Im online!");
-}
+  <script type="text/javascript" charset="utf-8">
 
-function fail() {
-    alert("failed to get filesystem");
-}
-
-function gotFS(fileSystem) {
-    alert("filesystem got");
-
-    window.fileSystem = fileSystem;
-    fileSystem.root.getDirectory(window.appRootDirName, {
-        create : true,
-        exclusive : false
-    }, dirReady, fail);
-
-
-}
-
-function dirReady(entry) {
-    window.appRootDir = entry;
-    alert("application dir is ready");
-     pathFull = window.appRootDir.fullPath;
-
-   
-}
-   
-
-downloadFile = function(){
-    var fileTransfer = new FileTransfer();
-
-    var url = "http://www.irs.gov/pub/irs-pdf/fw4.pdf";
-    var filePath = window.appRootDir.fullPath + "/test.pdf";
-   
-    fileTransfer.download(
-        url,
-        filePath,
-        function(entry) {
-            alert("download complete: " + entry.fullPath);
-        },
-        function(error) {
-            alert("download error" + error.source);
-        }
-    );
-}*/
-
-       // Wait for Cordova to load  
- //document.addEventListener("deviceready", onDeviceReady, false);
+    // Wait for device API libraries to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
 
     // device APIs are available
     //
     function onDeviceReady() {
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, fail);
-        window.resolveLocalFileSystemURI("file:///example.txt", onResolveSuccess, fail);
+        showAlert();
     }
 
-    function onFileSystemSuccess(fileSystem) {
-        alert(fileSystem.name);
+    // alert dialog dismissed
+        function alertDismissed() {
+            // do something
+        }
+
+    // Show a custom alertDismissed
+    //
+    function showAlert() {
+        navigator.notification.alert(
+            'You are the winner!',  // message
+            alertDismissed,         // callback
+            'Game Over',            // title
+            'Done'                  // buttonName
+        );
     }
 
-    function onResolveSuccess(fileEntry) {
-        alert(fileEntry.name);
-    }
+    </script>
 
-    function fail(error) {
-        alert(error.code);
-    }
-    
-</script> 
 
 <script>
     $(window).load(function()
@@ -223,20 +178,12 @@ downloadFile = function(){
               //  downloadFile();
             });
         });
- 
-       function showAlert() {
-        navigator.notification.alert(
-            'You are the winner!',  // message
-            alertDismissed,         // callback
-            'Game Over',            // title
-            'Done'                  // buttonName
-        );
-    } 
-        
+    
         
     });
     
 
+  
  
 </script>
 </head>
