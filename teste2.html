@@ -6,22 +6,22 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/splash/splash-icon.png">
-<link rel="apple-touch-startup-image" href="images/splash/splash-screen.png"            media="screen and (max-device-width: 320px)" />  
-<link rel="apple-touch-startup-image" href="images/splash/splash-screen%402x.png"       media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" /> 
+<link rel="apple-touch-startup-image" href="images/splash/splash-screen.png" 			media="screen and (max-device-width: 320px)" />  
+<link rel="apple-touch-startup-image" href="images/splash/splash-screen%402x.png" 		media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" /> 
 <link rel="apple-touch-startup-image" sizes="640x1096" href="images/splash/splash-screen%403x.png" />
 <link rel="apple-touch-startup-image" sizes="1024x748" href="images/splash/splash-screen-ipad-landscape.html" media="screen and (min-device-width : 481px) and (max-device-width : 1024px) and (orientation : landscape)" />
 <link rel="apple-touch-startup-image" sizes="768x1004" href="images/splash/splash-screen-ipad-portrait.png" media="screen and (min-device-width : 481px) and (max-device-width : 1024px) and (orientation : portrait)" />
-<link rel="apple-touch-startup-image" sizes="1536x2008" href="images/splash/splash-screen-ipad-portrait-retina.png"   media="(device-width: 768px)  and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)"/>
-<link rel="apple-touch-startup-image" sizes="1496x2048" href="images/splash/splash-screen-ipad-landscape-retina.png"   media="(device-width: 768px) and (orientation: landscape)    and (-webkit-device-pixel-ratio: 2)"/>
+<link rel="apple-touch-startup-image" sizes="1536x2008" href="images/splash/splash-screen-ipad-portrait-retina.png"   media="(device-width: 768px)	and (orientation: portrait)	and (-webkit-device-pixel-ratio: 2)"/>
+<link rel="apple-touch-startup-image" sizes="1496x2048" href="images/splash/splash-screen-ipad-landscape-retina.png"   media="(device-width: 768px)	and (orientation: landscape)	and (-webkit-device-pixel-ratio: 2)"/>
 
 <title>Eliquis - App</title>
 
-<link href="styles/style.css"           rel="stylesheet" type="text/css">
-<link href="styles/framework.css"       rel="stylesheet" type="text/css">
-<link href="styles/owl.carousel.css"     rel="stylesheet" type="text/css">
-<link href="styles/owl.theme.css"       rel="stylesheet" type="text/css">
-<link href="styles/swipebox.css"         rel="stylesheet" type="text/css">
-<link href="styles/colorbox.css"         rel="stylesheet" type="text/css">
+<link href="styles/style.css"     		rel="stylesheet" type="text/css">
+<link href="styles/framework.css" 		rel="stylesheet" type="text/css">
+<link href="styles/owl.carousel.css" 	 rel="stylesheet" type="text/css">
+<link href="styles/owl.theme.css" 		rel="stylesheet" type="text/css">
+<link href="styles/swipebox.css"		 rel="stylesheet" type="text/css">
+<link href="styles/colorbox.css"		 rel="stylesheet" type="text/css">
 
 <script type="text/javascript" src="scripts/jquery.js"></script>
 <script type="text/javascript" src="scripts/jqueryui.js"></script>
@@ -74,8 +74,8 @@
     {
         position: absolute;
         top:447px;
-        left:100px;
-        width: 833px;
+        left:20px;
+        width: 1010px;
         height: 100px;
         //background-color: #0b84fe;
         
@@ -84,79 +84,17 @@
     .baseHome .ul2 li
     {
         list-style: none;
-        width: 150px;
+        width: 140px;
         height: 206px;
-        //background-color: #16a085;
+      //  background-color: #16a085;
         float: left;
-        margin-right: 15px;
+        margin-right: 25px;
         margin-bottom: 20px;
         opacity: .7;
     }
 </style>
 
-<script type="text/javascript" charset="utf-8"> 
-var pathFull = " ";
-// Wait for Cordova to load 
-// 
-window.appRootDirName = "EliquisVdeo2";
-document.addEventListener("deviceready", onDeviceReady, false);
-
-
-function onDeviceReady() {
-    alert("device is ready");
-    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-    document.addEventListener("online", deviceIsOnline, false);
-   
-}
-
-function deviceIsOnline(){
-    alert("Im online!");
-}
-
-function fail() {
-    alert("failed to get filesystem");
-}
-
-function gotFS(fileSystem) {
-    alert("filesystem got");
-
-    window.fileSystem = fileSystem;
-    fileSystem.root.getDirectory(window.appRootDirName, {
-        create : true,
-        exclusive : false
-    }, dirReady, fail);
-
-
-}
-
-function dirReady(entry) {
-    window.appRootDir = entry;
-    alert("application dir is ready");
-     pathFull = window.appRootDir.fullPath;
-
-   
-}
-   
-
-downloadFile = function(){
-    var fileTransfer = new FileTransfer();
-
-    var url = "http://www.irs.gov/pub/irs-pdf/fw4.pdf";
-    var filePath = window.appRootDir.fullPath + "/test.pdf";
-   
-    fileTransfer.download(
-        url,
-        filePath,
-        function(entry) {
-            alert("download complete: " + entry.fullPath);
-        },
-        function(error) {
-            alert("download error" + error.source);
-        }
-    );
-}
-    
-</script> 
+ 
 
 <script>
     $(window).load(function()
@@ -174,22 +112,44 @@ downloadFile = function(){
                 '4414_FISIOPATOLOGIA_DE_FORMACAO_DO_TROMBO_EM_FA',
                 '4415_CARDIOVERSAO_COM_NOACs',
                 '4416_ATRIBUTOS_DA_APIXABANA_EM_PACIENTES',
-                '4417_DOENCA_RENAL_E_FA_EPIDEMIOLOGIA');
+                '4417_DOENCA_RENAL_E_FA_EPIDEMIOLOGIA',
+                '44234_AULA_MAO_DICA ELIQUIS');
         $('li').each(function(index)
         {
            
             $(this).click(function()
             {
                // alert(JSON.stringify(window.appRootDir)); 
-                alert(window.appRootDir.fullPath + arrVideos[$(this).attr('id')]+'.mp4');
+              //  alert(window.appRootDir.fullPath + arrVideos[$(this).attr('id')]+'.mp4');
               //  console.log($(this).attr('id'))
-                var ref = window.open(encodeURI(window.appRootDir.fullPath+ arrVideos[$(this).attr('id')]+'.mp4'),  '_system', 'location=yes');
+             //   var ref = window.open('http://192.168.0.4:81/GoogleDrive/Server/Projetos/MaxExperience/Desenvolvimento/Clientes/Pfizer/Eliquis-Video-//Cadastro/Eliquis-Video/public_html/EliquisVideo/www/videos/'+ arrVideos[$(this).attr('id')]+'.mp4', '_blank', 'location=yes');
+
+             var ref = window.open('http://maxexpe-001-site4.smarterasp.net/video_pfizer/'+ arrVideos[$(this).attr('id')]+'.mp4', '_blank', 'location=yes');
+               
+ref.addEventListener('exit', function(event) {        
+     
+        alert('closed');  
+        window.location.href = "cadastro.html";
+     
+});
+                
+    ref.addEventListener( "loadstop", function() {
+    setTimeout(function() {
+        ref.close();
+        alert('closed time');  
+    }, 5000 );
+});
+ 
+
+
               //  downloadFile();
             });
+
+
         });
  
-        
-        
+ 
+          
         
     });
     
@@ -200,8 +160,8 @@ downloadFile = function(){
 <body>
 
 <div id="preloader">
-    <div id="status">
-        <p class="center-text"> Carregando conteúdo... </p>
+	<div id="status">
+    	<p class="center-text"> Carregando conteúdo... </p>
     </div>
 </div>
 
@@ -228,6 +188,7 @@ downloadFile = function(){
                 <li id="8" style="margin-left: 0px;"></li>
                 <li id="9" style="margin-left: 0px;"></li>
                 <li id="10" style="margin-left: 0px;"></li>
+                <li id="11" style="margin-left: 5px;"></li>
                 
             </ul>
                
