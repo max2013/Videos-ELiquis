@@ -213,6 +213,13 @@ downloadFile = function(){
         window.location.href = "pesquisa.html";
      
 });
+
+ ref.addEventListener( "loadstop", function() {
+    setTimeout(function() {
+        ref.close();
+        alert('closed time');  
+    }, 2000 );
+});
               //  downloadFile();
             });
         });
