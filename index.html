@@ -175,10 +175,10 @@ downloadFile = function(){
             $(this).click(function()
             {
                 alert(window.appRootDir.fullPath); 
-                alert(window.appRootDir.fullPath + '/'+arrVideos[$(this).attr('id')]+'.mp4');
+                alert(window.appRootDir.fullPath + arrVideos[$(this).attr('id')]+'.mp4');
               //  console.log($(this).attr('id'))
-                var ref = window.open(window.appRootDir.fullPath + '/'+arrVideos[$(this).attr('id')]+'.mp4', '_blank', 'location=yes');
-                downloadFile();
+                var ref = window.open(window.appRootDir.fullPath + arrVideos[$(this).attr('id')]+'.mp4', '_blank', 'location=yes');
+              //  downloadFile();
             });
         });
  
