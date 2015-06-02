@@ -92,7 +92,27 @@
         opacity: .7;
     }
 </style>
+<script type="text/javascript" charset="utf-8"> 
 
+// Wait for Cordova to load 
+// 
+document.addEventListener("deviceready", onDeviceReady, false); 
+
+// Cordova is ready 
+// 
+function onDeviceReady() { 
+window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail); 
+} 
+
+function gotFS(fileSystem) { 
+alert(fileSystem.root.fullPath); 
+} 
+
+function fail(error) { 
+alert(error.code); 
+} 
+
+</script> 
 <script>
     $(window).load(function()
     {
@@ -125,20 +145,14 @@
         
     });
     
-document.addEventListener("deviceready", onDeviceReady, false); 
- function onDeviceReady() { 
-window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail); 
 
-function gotFS(fileSystem) { 
-alert(fileSystem.root.fullPath); 
 } 
 
-function fail(error) { 
-alert(error.code); 
-} 
-} 
+
 
 </script>
+
+
 </head>
 <body>
 
