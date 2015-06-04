@@ -77,7 +77,8 @@ function populateDB1(tx) {
 		   
 		function populateDB_success1() {
 		 //dbCreated = true;
-		  
+		   alert('Obrigado pela participação');
+           window.location.href="index.html";
 		  
 		 //alert("Successfully inserted");
 		  
@@ -127,10 +128,17 @@ function populateDB1(tx) {
      
 }
  if(countResp==3){
-           countResp = 0;
+          var countResp = 0 ;
+	var resp1 = false;
+	var resp2 = false;
+	var resp3 = false;
+
+	var resp1Alter = " ";
+	var resp2Alter = " ";
+	var resp3Alter = " ";
+           
            insertResp();
-           alert('Obrigado pela participação');
-           window.location.href="index.html";
+          
         } 
 			 
 		}
