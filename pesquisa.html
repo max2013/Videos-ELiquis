@@ -39,7 +39,6 @@ function onDeviceReady()
      function populateDB(tx) {
 // tx.executeSql('DROP TABLE IF EXISTS Registration');
  var sql = "CREATE TABLE IF NOT EXISTS Registration ( "
-   + "videoId INTEGER PRIMARY KEY AUTOINCREMENT), " +
    + "video_name_ID VARCHAR(50), " + "resp1 VARCHAR(50), "
    + "hit INTEGER, " + "resp2 VARCHAR(50), "
    + "resp3 VARCHAR(200))";
