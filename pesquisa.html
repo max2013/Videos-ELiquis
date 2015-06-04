@@ -103,12 +103,15 @@ function populateDB1(tx) {
         break;   
      
 }
+
  alert("Questão já respondida. = " + textAlert)
+		
+
 		}else{
 
 			alert('Confirma Escolha ?');
-
-
+            countResp+=1;
+   console.log(countResp);
 	switch(indice) {
     case 1:
         resp1Alter = respAlter;
@@ -118,9 +121,15 @@ function populateDB1(tx) {
         break;
     case 3:
        resp3Alter= respAlter;
-        break;    
+        break;
+
+
      
 }
+ if(countResp==3){
+           alert('Obrigado pela participação');
+           window.location.href="index.html";
+        } 
 			 
 		}
 	}
