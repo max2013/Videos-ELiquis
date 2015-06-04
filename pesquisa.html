@@ -3,9 +3,28 @@
 <head>
 <title>App_casos_clinicos_tela_pesquisa_R01</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script type="text/javascript" src="phonegap.js"></script>
+ 
+<script type="text/javascript" src="lib/js/js_install.js"></script>
+<script type="text/javascript" src="lib/js/js_cadastro.js"></script>
+
 </head>
-<body bgcolor="#FFFFFF">
+<body bgcolor="#FFFFFF" onload="onDeviceReady();"> 
+
+ <script>
+     
+
+function onDeviceReady()
+{
+    antsDb.handleConnect();
+}
+
+ 
+</script
+
 	<script>
+	 
 	var countResp = 0 ;
 	var resp1 = false;
 	var resp2 = false;
@@ -14,6 +33,21 @@
 	var resp1Alter = " ";
 	var resp2Alter = " ";
 	var resp3Alter = " ";
+
+function insertHitVideo(){
+ 
+  db.transaction(
+  function(tx) {        
+    tx.executeSql('INSERT INTO tb_participantes (participantesNome,participantesEmail)
+VALUES ('TESTE', 'Paul')');
+  }, errorCB);
+
+  function errorCB(tx, result)
+        {
+            alert('Erro ao inserir escolhas');
+        }
+
+}
 
 	function verifyResp(resp,respAlter,indice){
 
@@ -114,7 +148,7 @@
 		<td colspan="2">
 			<a href="#" onclick="verifyResp(resp3,'Diminuir',3); resp3 = true; return true"><img id="pesquisa_20" src="images/pesquisa_20.jpg" width="160" height="39" alt="" /></a></td>
 		<td colspan="2">
-			<a href="cadastro.html" onclick="verifyResp(resp3,'Manter-se a mesma',3); resp3 = true; return true"><img id="pesquisa_21" src="images/pesquisa_21.jpg" width="591" height="39" alt="" /></a></td>
+			<a href="#" onclick="insertHitVideo();"><img id="pesquisa_21" src="images/pesquisa_21.jpg" width="591" height="39" alt="" /></a></td>
 	</tr>
 	<tr>
 		<td>
