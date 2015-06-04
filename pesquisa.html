@@ -11,15 +11,16 @@
 <script>
 	 
 
-     var db;
+    var db;
+	var idNameVideo = " " ;
 	var countResp = 0 ;
 	var resp1 = false;
 	var resp2 = false;
 	var resp3 = false;
 
-	var resp1Alter = " ";
-	var resp2Alter = " ";
-	var resp3Alter = " ";
+	var resp1Alter = " resp1Alter";
+	var resp2Alter = " resp2Alter";
+	var resp3Alter = " resp3Alter";
 function onDeviceReady()
 {
   //  antsDb.handleConnect();
@@ -28,11 +29,11 @@ function onDeviceReady()
      db.transaction(populateDB, transaction_error, populateDB_success);
 
      function populateDB(tx) {
- tx.executeSql('DROP TABLE IF EXISTS Registration');
+// tx.executeSql('DROP TABLE IF EXISTS Registration');
  var sql = "CREATE TABLE IF NOT EXISTS Registration ( "
-   + "firstName VARCHAR(50), " + "lastName VARCHAR(50), "
-   + "age INTEGER, " + "username VARCHAR(50), "
-   + "password VARCHAR(200))";
+   + "video_name_ID VARCHAR(50), " + "resp1 VARCHAR(50), "
+   + "hit INTEGER, " + "resp2 VARCHAR(50), "
+   + "resp3 VARCHAR(200))";
  tx.executeSql(sql);
   
   
@@ -45,10 +46,35 @@ function onDeviceReady()
 		function populateDB_success() {
 		 //dbCreated = true;
 		  
-		 // where you want to move
+		  
+		 //alert("Successfully inserted");
+		  
+		}
+}
+
+function insertResp(){
+
+db.transaction(populateDB1, transaction_error1, populateDB_success1);
+
+function populateDB1(tx) {
+  
+  tx.executeSql("INSERT INTO Registration (video_name_ID,resp1,hit,resp2,resp3) VALUES ('"+ idNameVideo +"','"+ resp1Alter +"' , "+ countResp+", '"+ resp2Alter +"','"+ resp2Alter +"' )");
+  
+  
+}
+ 
+		function transaction_error1(tx, error) {
+		 alert("Database Error: " + error);
+		}
+		   
+		function populateDB_success1() {
+		 //dbCreated = true;
+		  
+		  
 		 alert("Successfully inserted");
 		  
 		}
+
 }
 
 
@@ -169,7 +195,7 @@ function insertHitVideo(){
 		<td colspan="2">
 			<a href="#" onclick="verifyResp(resp3,'Diminuir',3); resp3 = true; return true"><img id="pesquisa_20" src="images/pesquisa_20.jpg" width="160" height="39" alt="" /></a></td>
 		<td colspan="2">
-			<a href="#" onclick="insertHitVideo();"><img id="pesquisa_21" src="images/pesquisa_21.jpg" width="591" height="39" alt="" /></a></td>
+			<a href="#" onclick="insertResp();"><img id="pesquisa_21" src="images/pesquisa_21.jpg" width="591" height="39" alt="" /></a></td>
 	</tr>
 	<tr>
 		<td>
