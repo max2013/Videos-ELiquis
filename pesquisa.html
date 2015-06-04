@@ -9,18 +9,26 @@
   
 
 <script>
-	 
+	 function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+var video_id = getParameterByName('video_id');
+console.log(video_id); 
 
     var db;
-	var idNameVideo = " " ;
+	var idNameVideo = video_id ;
 	var countResp = 0 ;
 	var resp1 = false;
 	var resp2 = false;
 	var resp3 = false;
 
-	var resp1Alter = " resp1Alter";
-	var resp2Alter = " resp2Alter";
-	var resp3Alter = " resp3Alter";
+	var resp1Alter = " ";
+	var resp2Alter = " ";
+	var resp3Alter = " ";
 function onDeviceReady()
 {
   //  antsDb.handleConnect();
@@ -31,6 +39,7 @@ function onDeviceReady()
      function populateDB(tx) {
 // tx.executeSql('DROP TABLE IF EXISTS Registration');
  var sql = "CREATE TABLE IF NOT EXISTS Registration ( "
+   + "videoId INTEGER PRIMARY KEY AUTOINCREMENT), " +
    + "video_name_ID VARCHAR(50), " + "resp1 VARCHAR(50), "
    + "hit INTEGER, " + "resp2 VARCHAR(50), "
    + "resp3 VARCHAR(200))";
@@ -58,7 +67,7 @@ db.transaction(populateDB1, transaction_error1, populateDB_success1);
 
 function populateDB1(tx) {
   
-  tx.executeSql("INSERT INTO Registration (video_name_ID,resp1,hit,resp2,resp3) VALUES ('"+ idNameVideo +"','"+ resp1Alter +"' , "+ countResp+", '"+ resp2Alter +"','"+ resp2Alter +"' )");
+  tx.executeSql("INSERT INTO Registration (video_name_ID,resp1,hit,resp2,resp3) VALUES ('"+ idNameVideo +"','"+ resp1Alter +"' , "+ countResp+", '"+ resp2Alter +"','"+ resp3Alter +"' )");
   
   
 }
