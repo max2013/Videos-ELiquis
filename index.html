@@ -108,14 +108,14 @@ window.appRootDirName = "EliquisVdeo2";
 
     // Wait for device API libraries to load
     //
-    document.addEventListener("deviceready", onDeviceReady, false);
+   // document.addEventListener("deviceready", onDeviceReady, false);
 
     // device APIs are available
     //
     function onDeviceReady() {
          showAlert();
-         antsDb.handleConnect(); 
-         antsDb.handleCreateDb();
+        antsDb.handleConnect(); 
+        antsDb.handleCreateDb();
     }
 
     // alert dialog dismissed
@@ -201,7 +201,7 @@ window.appRootDirName = "EliquisVdeo2";
  
 </script>
 </head>
-<body>
+<body onload="onDeviceReady()">
 
 <div id="preloader">
     <div id="status">
