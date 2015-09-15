@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <script type="text/javascript" src="phonegap.js"></script>
- 
+  
   
 
 <script>
@@ -32,18 +32,21 @@ console.log(video_id);
 function onDeviceReady()
 {
   //  antsDb.handleConnect();
-    db = window.openDatabase("RegistrationDB", "1.0", "Registration", 200000);
+    db = window.openDatabase('App_SqlLite', '1.0', '@max', 50 * 1024 * 1024);
     console.log("onDeviceReady pesquisa");
      db.transaction(populateDB, transaction_error, populateDB_success);
 
      function populateDB(tx) {
 // tx.executeSql('DROP TABLE IF EXISTS Registration');
- var sql = "CREATE TABLE IF NOT EXISTS Registration ( "
+ var sql = "CREATE TABLE IF NOT EXISTS Registration_video_resp ( "
    + "video_name_ID VARCHAR(50), " + "resp1 VARCHAR(50), "
    + "hit INTEGER, " + "resp2 VARCHAR(50), "
    + "resp3 VARCHAR(200))";
  tx.executeSql(sql);
-  
+
+       var value = window.localStorage.getItem("username");
+       console.log("localStorage ==  " + value)
+       alert("localStorage: " + value);
   
 }
  
@@ -66,7 +69,7 @@ db.transaction(populateDB1, transaction_error1, populateDB_success1);
 
 function populateDB1(tx) {
   
-  tx.executeSql("INSERT INTO Registration (video_name_ID,resp1,hit,resp2,resp3) VALUES ('"+ idNameVideo +"','"+ resp1Alter +"' , "+ countResp+", '"+ resp2Alter +"','"+ resp3Alter +"' )");
+  tx.executeSql("INSERT INTO Registration_video_resp (video_name_ID,resp1,hit,resp2,resp3) VALUES ('"+ idNameVideo +"','"+ resp1Alter +"' , "+ countResp+", '"+ resp2Alter +"','"+ resp3Alter +"' )");
   
   
 }
