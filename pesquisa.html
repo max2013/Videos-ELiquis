@@ -6,8 +6,16 @@
  <link href="styles/jquery-ui.css" rel="stylesheet">
 <style>
          .ui-widget-header,.ui-state-default, ui-button{
-           
+            background:#b9cd6d;
+            border: 1px solid #b9cd6d;
+            color: #000;
+            font-weight: bold;
+
          }
+
+         .ui-dialog-titlebar-close {
+  visibility: hidden;
+}
       </style>
 <script type="text/javascript" src="phonegap.js"></script>
  <script type="text/javascript" src="scripts/jquery-1.10.2.js"></script>
@@ -60,7 +68,7 @@ function onDeviceReady()
 
        idActualUser = window.localStorage.getItem("idActualUser");
        console.log("localStorage ==  " + idActualUser)
-       alert("localStorage: " + idActualUser);
+      // alert("localStorage: " + idActualUser);
   
 }
  
@@ -105,7 +113,7 @@ function populateDB1(tx) {
 		  // alert('Obrigado pela participação');
 
       
-           /*    var retVal = confirm("Continuar na galeria de videos?");
+            /*    var retVal = confirm("Continuar na galeria de videos?");
                if( retVal == true ){
                  console.log ("User wants to continue!");
                   window.location.href="index_gal_video.html";
@@ -115,20 +123,22 @@ function populateDB1(tx) {
                   console.log ("User does not want to continue!");
                      window.location.href="index.html";
                   return false;
-               }*/
+               } */
             
  $( "#dialog-confirm" ).dialog({
-      resizable: false,
+      resizable: true,
       height:140,
+      width:400,
       modal: true,
+   //   closeOnEscape: false,
       buttons: {
         "CONTINUAR": function() {
           window.location.href="index_gal_video.html";
-          $( this ).dialog( "close" );
+         // $( this ).dialog( "close" );
         },
         SAIR: function() {
            window.location.href="index.html";
-          $( this ).dialog( "close" );
+           
 
         }
       }
@@ -190,11 +200,7 @@ function populateDB1(tx) {
 			 
 		}
 	}
-
  
-
-
-
 	</script>
 
 
@@ -202,7 +208,7 @@ function populateDB1(tx) {
 </head>
 <body bgcolor="#FFFFFF" onload="onDeviceReady();"> 
 
-<div id="dialog-confirm" title="Continuar na galeria de videos?">
+<div id="dialog-confirm" style="width:700px;" title="Continuar na galeria de videos?">
    </p>
 </div>
  
