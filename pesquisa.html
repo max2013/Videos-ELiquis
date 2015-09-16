@@ -3,10 +3,20 @@
 <head>
 <title>App_casos_clinicos_tela_pesquisa_R01</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
+ <link href="styles/jquery-ui.css" rel="stylesheet">
+<style>
+         .ui-widget-header,.ui-state-default, ui-button{
+           
+         }
+      </style>
 <script type="text/javascript" src="phonegap.js"></script>
+ <script type="text/javascript" src="scripts/jquery-1.10.2.js"></script>
+      <script type="text/javascript" src="scripts/jquery-ui.js"></script>
   
+
+ <script>
   
+  </script>  
 
 <script>
 	 function getParameterByName(name) {
@@ -29,6 +39,9 @@ console.log(video_id);
 	var resp1Alter = " ";
 	var resp2Alter = " ";
 	var resp3Alter = " ";
+
+	var idActualUser;
+
 function onDeviceReady()
 {
   //  antsDb.handleConnect();
@@ -39,14 +52,15 @@ function onDeviceReady()
      function populateDB(tx) {
 // tx.executeSql('DROP TABLE IF EXISTS Registration');
  var sql = "CREATE TABLE IF NOT EXISTS Registration_video_resp ( "
-   + "video_name_ID VARCHAR(50), " + "resp1 VARCHAR(50), "
+   + "video_name_ID VARCHAR(50), " + "participantesId VARCHAR(50), "
+   + "resp1 VARCHAR(50), "
    + "hit INTEGER, " + "resp2 VARCHAR(50), "
    + "resp3 VARCHAR(200))";
  tx.executeSql(sql);
 
-       var value = window.localStorage.getItem("username");
-       console.log("localStorage ==  " + value)
-       alert("localStorage: " + value);
+       idActualUser = window.localStorage.getItem("idActualUser");
+       console.log("localStorage ==  " + idActualUser)
+       alert("localStorage: " + idActualUser);
   
 }
  
@@ -69,7 +83,7 @@ db.transaction(populateDB1, transaction_error1, populateDB_success1);
 
 function populateDB1(tx) {
   
-  tx.executeSql("INSERT INTO Registration_video_resp (video_name_ID,resp1,hit,resp2,resp3) VALUES ('"+ idNameVideo +"','"+ resp1Alter +"' , "+ countResp+", '"+ resp2Alter +"','"+ resp3Alter +"' )");
+  tx.executeSql("INSERT INTO Registration_video_resp (video_name_ID,participantesId,resp1,hit,resp2,resp3) VALUES ('"+ idNameVideo +"','"+ idActualUser +"','"+ resp1Alter +"' , "+ countResp+", '"+ resp2Alter +"','"+ resp3Alter +"' )");
   
   
 }
@@ -88,8 +102,39 @@ function populateDB1(tx) {
 	var resp1Alter = " ";
 	var resp2Alter = " ";
 	var resp3Alter = " ";
-		   alert('Obrigado pela participação');
+		  // alert('Obrigado pela participação');
+
+      
+           /*    var retVal = confirm("Continuar na galeria de videos?");
+               if( retVal == true ){
+                 console.log ("User wants to continue!");
+                  window.location.href="index_gal_video.html";
+                  return true;
+               }
+               else{
+                  console.log ("User does not want to continue!");
+                     window.location.href="index.html";
+                  return false;
+               }*/
+            
+ $( "#dialog-confirm" ).dialog({
+      resizable: false,
+      height:140,
+      modal: true,
+      buttons: {
+        "CONTINUAR": function() {
+          window.location.href="index_gal_video.html";
+          $( this ).dialog( "close" );
+        },
+        SAIR: function() {
            window.location.href="index.html";
+          $( this ).dialog( "close" );
+
+        }
+      }
+    });
+
+          
 		  
 		 //alert("Successfully inserted");
 		  
@@ -157,6 +202,9 @@ function populateDB1(tx) {
 </head>
 <body bgcolor="#FFFFFF" onload="onDeviceReady();"> 
 
+<div id="dialog-confirm" title="Continuar na galeria de videos?">
+   </p>
+</div>
  
 
 
