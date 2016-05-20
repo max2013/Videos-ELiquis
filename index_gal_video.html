@@ -155,14 +155,13 @@ window.appRootDirName = "EliquisVdeo2";
         alert("documentsDirectoryPath 1 = " + documentsDirectoryPath);
         documentsDirectoryPath = documentsDirectoryPath.substring("file://".length);
          alert("documentsDirectoryPath 2 = " + documentsDirectoryPath);
-          documentsDirectoryPath = documentsDirectoryPath.substring("/EliquisVdeo.app/www/index_gal_video.html".length);
-         alert("documentsDirectoryPath 3 = " + documentsDirectoryPath);
-       // documentsDirectoryPath = documentsDirectoryPath.substring(0, documentsDirectoryPath.indexOf("/EliquisVdeo.app/www/index.html"));
-      //   alert("documentsDirectoryPath 4 = " + documentsDirectoryPath);
-         //documentsDirectoryPath += "/Documents";
+         
+         documentsDirectoryPath = documentsDirectoryPath.substring(0, documentsDirectoryPath.indexOf("/EliquisVdeo.app/www/index_gal_video.html"));
+         alert("documentsDirectoryPath 4 = " + documentsDirectoryPath);
+         documentsDirectoryPath += "/Documents";
          //var docPath = documentsDirectoryPath += "/Documents";
   
-         //alert("documents = " + documentsDirectoryPath) 
+         alert("documents 5 = " + documentsDirectoryPath) ;
         
         var arrVideos = new Array(
                 '4404_MESA_REDONDA', 
