@@ -143,7 +143,19 @@ window.appRootDirName = "EliquisVdeo2";
 
     $(window).load(function()
     {
-      
+
+       window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
+       window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+
+        function gotFS(fileSystem) {
+          alert("entered gotFS: " + fileSystem.root.toURL());
+        }
+
+        var documentsDirectoryPath = decodeURIComponent(window.location.href);
+      //  documentsDirectoryPath = documentsDirectoryPath.substring("file://".length);
+      //  documentsDirectoryPath = documentsDirectoryPath.substring(0, documentsDirectoryPath.indexOf("/.app/www/index.html"));
+        //documentsDirectoryPath += "/Documents";
+      alert("documentsDirectoryPath = " + documentsDirectoryPath);
         
         var arrVideos = new Array(
                 '4404_MESA_REDONDA', 
