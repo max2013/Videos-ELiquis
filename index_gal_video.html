@@ -151,14 +151,14 @@ window.appRootDirName = "EliquisVdeo2";
 
 
 
-        var documentsDirectoryPath = decodeURIComponent(window.location.href);
-        alert("documentsDirectoryPath 1 = " + documentsDirectoryPath);
-        documentsDirectoryPath = documentsDirectoryPath.substring("file://".length);
-         alert("documentsDirectoryPath 2 = " + documentsDirectoryPath);
+     //   var documentsDirectoryPath = decodeURIComponent(window.location.href);
+     //   alert("documentsDirectoryPath 1 = " + documentsDirectoryPath);
+     //   documentsDirectoryPath = documentsDirectoryPath.substring("file://".length);
+     //    alert("documentsDirectoryPath 2 = " + documentsDirectoryPath);
        // documentsDirectoryPath = documentsDirectoryPath.substring(0, documentsDirectoryPath.indexOf("/.app/www/index.html"));
       //   alert("documentsDirectoryPath 3 = " + documentsDirectoryPath);
-        documentsDirectoryPath += "/Documents";
-        var docPath = documentsDirectoryPath += "/Documents";
+     //   documentsDirectoryPath += "/Documents";
+    //    var docPath = documentsDirectoryPath += "/Documents";
        
      //    alert("documents = " + docPath) 
         var arrVideos = new Array(
@@ -186,7 +186,7 @@ window.appRootDirName = "EliquisVdeo2";
       //  var ref = window.open(encodeURI('http://192.168.1.119:81/GoogleDrive/Server/Projetos/MaxExperience/Desenvolvimento/Clientes/Pfizer/Eliquis-Video-Cadastro/Eliquis-Video/public_html/EliquisVideo/www/videos/'+ arrVideos[$(this).attr('id')]+'.mp4'),'_blank', 'location=no');
       
         actualVideoIdname = arrVideos[$(this).attr('id')];
-        var ref = window.open(encodeURI('videos/'+ arrVideos[$(this).attr('id')]+'.mp4'),'_blank', 'location=no');
+        var ref = window.open(encodeURI('http://avmeventos.com.br/clientes/pfizer/eliquis_video/video/'+ arrVideos[$(this).attr('id')]+'.mp4'),'_blank', 'location=no');
       // console.log($(this).attr('id'))
       
        
