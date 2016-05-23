@@ -176,28 +176,42 @@ function populateDB1(tx) {
 
 		}else{
 
-			alert('Confirma Escolha ?');
-            countResp+=1;
-   console.log(countResp);
-	switch(indice) {
-    case 1:
-        resp1Alter = respAlter;
-        break;
-    case 2:
-        resp2Alter= respAlter;
-        break;
-    case 3:
-       resp3Alter= respAlter;
-        break;
-
-
-     
-}
- if(countResp==3){
-         insertResp();
-   
-        } 
-			 
+			 var x=confirm('Confirma Escolha ?');
+			if (x){
+			                countResp+=1;
+					   console.log(countResp);
+						switch(indice) {
+					    case 1:
+					        resp1Alter = respAlter;
+					        resp1 =true;
+					        break;
+					    case 2:
+					        resp2Alter= respAlter;
+					         resp2 =true;
+					        break;
+					    case 3:
+					       resp3Alter= respAlter;
+					        resp3 =true;
+					        break;}
+					 if(countResp==3){
+					         insertResp();
+					   
+					        } 
+			}
+			else{
+			    console.log("cancel");
+			    	switch(indice) {
+					    case 1:
+					        resp1 = false;
+					        break;
+					    case 2:
+					        resp2= false;
+					        break;
+					    case 3:
+					       resp3= false;
+					        break;}
+			}
+ 	 
 		}
 	}
  
@@ -214,7 +228,7 @@ function populateDB1(tx) {
  
 
 
-<!-- Save for Web Slices (App_casos_clinicos_tela_pesquisa_R01.psd) -->
+ 
 <table id="Table_01" style="margin-left:-12px;margin-top:-7px;" width="1024" border="0" cellpadding="0" cellspacing="0">
 	<tr>
 		<td colspan="8">
@@ -238,11 +252,11 @@ function populateDB1(tx) {
 		<td rowspan="3">
 			<img id="pesquisa_07" src="images/pesquisa_07.jpg" width="1" height="188" alt="" /></td> 
 		<td colspan="3">
-			<a href="#"  onClick=" verifyResp(resp1,'Pouco',1); resp1 = true; return true"><img id="pesquisa_08" src="images/pesquisa_08.jpg" width="237" height="57" alt="" /></a></td>
+			<a href="#"  onClick=" verifyResp(resp1,'Pouco',1); return true"><img id="pesquisa_08" src="images/pesquisa_08.jpg" width="237" height="57" alt="" /></a></td>
 		<td colspan="2">
-			<a href="#" onClick="  verifyResp(resp1,'Muito',1); resp1 = true; return true"><img id="pesquisa_09" src="images/pesquisa_09.jpg" width="156" height="57" alt="" /></a></td>
+			<a href="#" onClick="  verifyResp(resp1,'Muito',1);   return true"><img id="pesquisa_09" src="images/pesquisa_09.jpg" width="156" height="57" alt="" /></a></td>
 		<td colspan="3">
-			<a href="#" onClick=" verifyResp(resp1,'Indiferente',1); resp1 = true; return true"><img id="pesquisa_10" src="images/pesquisa_10.jpg" width="627" height="57" alt="" /></a></td>
+			<a href="#" onClick=" verifyResp(resp1,'Indiferente',1);   return true"><img id="pesquisa_10" src="images/pesquisa_10.jpg" width="627" height="57" alt="" /></a></td>
 	</tr>
 	<tr>
 		<td rowspan="2">
@@ -252,9 +266,9 @@ function populateDB1(tx) {
 	</tr>
 	<tr>
 		<td>
-			<a href="#" onClick="verifyResp(resp2,'Sim',2); resp2 = true; return true"><img id="pesquisa_13" src="images/pesquisa_13.jpg" width="212" height="41" alt="" /></a></td>
+			<a href="#" onClick="verifyResp(resp2,'Sim',2);  return true"><img id="pesquisa_13" src="images/pesquisa_13.jpg" width="212" height="41" alt="" /></a></td>
 		<td colspan="4">
-			<a href="#" onClick="verifyResp(resp2,'Não',2); resp2 = true; return true"><img id="pesquisa_14" src="images/pesquisa_14.jpg" width="207" height="41" alt="" /></a></td>
+			<a href="#" onClick="verifyResp(resp2,'Não',2);   return true"><img id="pesquisa_14" src="images/pesquisa_14.jpg" width="207" height="41" alt="" /></a></td>
 		<td colspan="3">
 			<img id="pesquisa_15" src="images/pesquisa_15.jpg" width="594" height="41" alt="" /></td>
 	</tr>
@@ -270,11 +284,11 @@ function populateDB1(tx) {
 	</tr>
 	<tr>
 		<td colspan="5">
-			<a href="#" onclick="verifyResp(resp3,'Aumentar',3); resp3 = true;"><img id="pesquisa_19" src="images/pesquisa_19.jpg" width="270" height="39" alt="" /></a></td>
+			<a href="#" onclick="verifyResp(resp3,'Aumentar',3); "><img id="pesquisa_19" src="images/pesquisa_19.jpg" width="270" height="39" alt="" /></a></td>
 		<td colspan="2">
-			<a href="#" onclick="verifyResp(resp3,'Diminuir',3); resp3 = true; return true"><img id="pesquisa_20" src="images/pesquisa_20.jpg" width="160" height="39" alt="" /></a></td>
+			<a href="#" onclick="verifyResp(resp3,'Diminuir',3);   return true"><img id="pesquisa_20" src="images/pesquisa_20.jpg" width="160" height="39" alt="" /></a></td>
 		<td colspan="2">
-			<a href="#" onclick="verifyResp(resp3,'Manter-se a mesma',3); resp3 = true; return true"><img id="pesquisa_21" src="images/pesquisa_21.jpg" width="591" height="39" alt="" /></a></td>
+			<a href="#" onclick="verifyResp(resp3,'Manter-se a mesma',3);   return true"><img id="pesquisa_21" src="images/pesquisa_21.jpg" width="591" height="39" alt="" /></a></td>
 	</tr>
 	<tr>
 		<td>
